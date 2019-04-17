@@ -1,0 +1,12 @@
+/usr/local/man/man3/Email::MIME.3pm
+/usr/local/man/man3/Email::MIME::Creator.3pm
+/usr/local/man/man3/Email::MIME::Encode.3pm
+/usr/local/man/man3/Email::MIME::Header.3pm
+/usr/local/man/man3/Email::MIME::Header::AddressList.3pm
+/usr/local/man/man3/Email::MIME::Modifier.3pm
+/usr/local/share/perl/5.18.2/Email/MIME.pm
+/usr/local/share/perl/5.18.2/Email/MIME/Creator.pm
+/usr/local/share/perl/5.18.2/Email/MIME/Encode.pm
+/usr/local/share/perl/5.18.2/Email/MIME/Header.pm
+/usr/local/share/perl/5.18.2/Email/MIME/Header/AddressList.pm
+/usr/local/share/perl/5.18.2/Email/MIME/Modifier.pm

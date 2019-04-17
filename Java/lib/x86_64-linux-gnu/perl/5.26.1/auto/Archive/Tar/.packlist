@@ -1,0 +1,11 @@
+/usr/local/bin/ptar
+/usr/local/bin/ptardiff
+/usr/local/bin/ptargrep
+/usr/local/man/man1/ptar.1p
+/usr/local/man/man1/ptardiff.1p
+/usr/local/man/man1/ptargrep.1p
+/usr/local/man/man3/Archive::Tar.3pm
+/usr/local/man/man3/Archive::Tar::File.3pm
+/usr/local/share/perl/5.26.1/Archive/Tar.pm
+/usr/local/share/perl/5.26.1/Archive/Tar/Constant.pm
+/usr/local/share/perl/5.26.1/Archive/Tar/File.pm

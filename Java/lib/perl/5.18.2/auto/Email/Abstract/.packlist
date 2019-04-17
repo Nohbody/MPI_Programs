@@ -1,0 +1,14 @@
+/usr/local/man/man3/Email::Abstract.3pm
+/usr/local/man/man3/Email::Abstract::EmailMIME.3pm
+/usr/local/man/man3/Email::Abstract::EmailSimple.3pm
+/usr/local/man/man3/Email::Abstract::MIMEEntity.3pm
+/usr/local/man/man3/Email::Abstract::MailInternet.3pm
+/usr/local/man/man3/Email::Abstract::MailMessage.3pm
+/usr/local/man/man3/Email::Abstract::Plugin.3pm
+/usr/local/share/perl/5.18.2/Email/Abstract.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/EmailMIME.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/EmailSimple.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/MIMEEntity.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/MailInternet.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/MailMessage.pm
+/usr/local/share/perl/5.18.2/Email/Abstract/Plugin.pm

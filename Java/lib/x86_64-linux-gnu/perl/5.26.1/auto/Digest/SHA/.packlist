@@ -1,0 +1,5 @@
+/usr/local/bin/shasum
+/usr/local/lib/x86_64-linux-gnu/perl/5.26.1/Digest/SHA.pm
+/usr/local/lib/x86_64-linux-gnu/perl/5.26.1/auto/Digest/SHA/SHA.so
+/usr/local/man/man1/shasum.1p
+/usr/local/man/man3/Digest::SHA.3pm
