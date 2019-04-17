@@ -1,3 +1,0 @@
-[console_scripts]
-starcluster = starcluster.cli:main
-

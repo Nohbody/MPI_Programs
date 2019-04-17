@@ -1,3 +1,0 @@
-
-[testing]
-nose>=1.0

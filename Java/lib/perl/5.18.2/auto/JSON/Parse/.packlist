@@ -1,9 +1,0 @@
-/usr/local/bin/validjson
-/usr/local/lib/perl/5.18.2/JSON/Parse.pm
-/usr/local/lib/perl/5.18.2/JSON/Parse.pod
-/usr/local/lib/perl/5.18.2/JSON/Tokenize.pm
-/usr/local/lib/perl/5.18.2/JSON/Tokenize.pod
-/usr/local/lib/perl/5.18.2/auto/JSON/Parse/Parse.bs
-/usr/local/lib/perl/5.18.2/auto/JSON/Parse/Parse.so
-/usr/local/man/man3/JSON::Parse.3pm
-/usr/local/man/man3/JSON::Tokenize.3pm
