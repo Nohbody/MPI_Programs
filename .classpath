@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/www/OpenMPI/mpi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nohbo/eclipse-workspace/MPI_Programs/lib/antlr-4.7.1-complete.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nohbo/eclipse-workspace/MPI_Programs/lib/commons-lang3-3.8.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nohbo/eclipse-workspace/MPI_Programs/lib/commons-text-1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nohbo/eclipse-workspace/MPI_Programs/lib/org.abego.treelayout.core-1.0.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/nohbo/eclipse-workspace/MPI_Programs/lib/org.abego.treelayout.demo-1.0.3.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
