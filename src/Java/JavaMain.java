@@ -48,7 +48,7 @@ public class JavaMain {
 		boolean intFlag = true;
 		String subDir = "assign3";
 		String pastDir = "???";
-		String sourcesDir = "???";
+		String sourcesDir = "GithubResults";
 		userFolder = "../workFiles/nohbodyz@gmail.com";
 		boolean useITF = false;
 		double decayFactor = Double.parseDouble("0.3");
@@ -114,7 +114,7 @@ public class JavaMain {
 		for (int i=0; i < allTrees.length; i++) {
 			ft = allTrees[i];
 			if (ft == null)
-				break;
+				continue;
 			ft.assignWeights(ft.firstNode, stopWords, fileCounts, ft.firstNode, allTrees.length, useITF);
 			ft.allChildren(ft.firstNode);
 		}
@@ -148,7 +148,7 @@ public class JavaMain {
 		// Divide the jobs to the nodes
 		int worldSize = MPI.COMM_WORLD.getSize();
 		int c1 = primaryPairCount/worldSize + 1;
-		int c2 = secondaryCount/worldSize + 1;
+		int c2 = secondaryPairCount/worldSize + 1;
 		ByteBuffer primaryJobs  = MPI.newByteBuffer(next.getExtent() * c1);
 		ByteBuffer secondaryJobs = MPI.newByteBuffer(next.getExtent() * c2);
 		
@@ -160,7 +160,8 @@ public class JavaMain {
 		IndexPairValue ipv = new IndexPairValue();
 		ByteBuffer myIPVs = MPI.newByteBuffer(ipv.getExtent() * (c1 + c2));
 
-		FlatTree tree1, tree2;
+		FlatTree tree1 = null;
+		FlatTree tree2 = null;
 
 		long startTime = System.nanoTime();
 		
@@ -175,7 +176,7 @@ public class JavaMain {
 		for (int i=0; i<allTrees.length; i++) {
 			tree1 = allTrees[i];
 			if (tree1 == null)
-				break;
+				continue;
 			record = minScore.assignSimilarity2(tree1, tree1, true, selfScore, decayFactor);
 			selfScore.put(tree1, record);
 			System.out.println("Self score: " + tree1.originFile + " " + record);
@@ -189,12 +190,18 @@ public class JavaMain {
 			IndexPair.Data n = next.getData(primaryJobs, i);
 			
 			System.out.println("JOB: " + i + " " + n.getFirst() + " " + n.getSecond());
-			
-			tree1 = allTrees[n.getFirst()];
-			tree2 = allTrees[n.getSecond()];
+			try {
+				tree1 = allTrees[n.getFirst()];
+				tree2 = allTrees[n.getSecond()];
+			}
+			catch (ArrayIndexOutOfBoundsException e) {
+				System.out.println(e);
+				tree1 = null;
+				tree2 = null;
+			}
 			
 			if (tree1 == null || tree2 == null)
-				break;
+				continue;
 
 			// Only run the comparison if one of the trees is a primary file
 			if (tree1.fileDirSouce.equals(subDir) || tree2.fileDirSouce.equals(subDir)) {
@@ -208,9 +215,9 @@ public class JavaMain {
 					nextPV.score = nextPV.assignSimilarity2(tree1, tree2, false, selfScore, decayFactor);
 	
 					if (nextPV.score >= MIN_MATCH) {
-						myScores.add(nextPV);
+					    myScores.add(nextPV);
 						
-						IndexPairValue.Data pv = ipv.getData(myIPVs, ipvIndex);
+					    IndexPairValue.Data pv = ipv.getData(myIPVs, ipvIndex);
 					    pv.putRank(rank);
 					    pv.putListIndex(ipvIndex);
 					    pv.putValue(nextPV.score);
@@ -221,15 +228,23 @@ public class JavaMain {
 		}
 		
 		// Secondary jobs
+		System.out.println(secondaryCount + " " + c2);
 		if (secondaryCount != 0) {
 			for (int i=0; i<c2; i++) {
 				IndexPair.Data n = next.getData(secondaryJobs, i);
 				
-				tree1 = allTrees[(n.getFirst()/primaryCount - 1) * secondaryCount + n.getFirst()];
-				tree2 = allTrees[(n.getSecond()/secondaryCount) * primaryCount + n.getSecond()];
-				
+				 System.out.println("JOB: " + i + " " + ((n.getFirst()/primaryCount) * secondaryCount + n.getFirst()) + " " + ((n.getSecond()/secondaryCount) * primaryCount + n.getSecond()));
+				try {
+					tree1 = allTrees[(n.getFirst()/primaryCount) * secondaryCount + n.getFirst()];
+					tree2 = allTrees[(n.getSecond()/secondaryCount) * primaryCount + n.getSecond()];
+				}
+				catch (ArrayIndexOutOfBoundsException e) {
+					System.out.println(e);
+					tree1 = null;
+					tree2 = null;
+				}
 				if (tree1 == null || tree2 == null)
-					break;
+					continue;
 				
 				// Only run the comparison if one of the trees is a primary file
 				if (tree1.fileDirSouce.equals(subDir) || tree2.fileDirSouce.equals(subDir)) {

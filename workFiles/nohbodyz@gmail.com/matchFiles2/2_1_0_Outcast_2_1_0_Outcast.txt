@@ -1,0 +1,9 @@
+'2_1_0_Outcast.java' '../workFiles/nohbodyz@gmail.com/assign3/Java/2_1_0_Outcast.java' '2_1_0_Outcast.java' '../workFiles/nohbodyz@gmail.com/assign3/Java/2_1_0_Outcast.java' '1.0' 
+23:2 471:25 82
+23:2 471:25 82
+0.003190770149956276
+
+2:2 471:25 85
+2:2 471:25 85
+0.003182688246242686
+
